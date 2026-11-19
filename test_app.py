@@ -1,3 +1,4 @@
+
 import unittest
 from app import add, subtract, multiply
 
@@ -12,5 +13,5 @@ class TestCalculator(unittest.TestCase):
     def test_multiplication(self):
         self.assertEqual(multiply(5, 4), 20)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

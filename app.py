@@ -10,15 +10,16 @@ def subtract(a, b):
 def multiply(a, b):
     return a * b
 
+
 class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        result = f"""
+        result = """
         <html>
         <body>
         <h1>Calculator Application</h1>
-        <h3>Addition: {add(10, 20)}</h3>
-        <h3>Subtraction: {subtract(20, 10)}</h3>
-        <h3>Multiplication: {multiply(5, 4)}</h3>
+        <h3>Addition: 30</h3>
+        <h3>Subtraction: 10</h3>
+        <h3>Multiplication: 20</h3>
         <p>Application deployed using Kubernetes!</p>
         </body>
         </html>
@@ -28,6 +29,9 @@ class MyHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(result.encode())
 
-server = HTTPServer(("0.0.0.0", 8000), MyHandler)
-print("Calculator running on port 8000")
-server.serve_forever()
+
+if __name__ == "__main__":
+    server = HTTPServer(("0.0.0.0", 8000), MyHandler)
+    print("Calculator running on port 8000")
+    server.serve_forever()
+
